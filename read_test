@@ -1,0 +1,4 @@
+#!/bin/bash
+
+read -p "tast inn et tall   " -s tall
+echo "du tastet $tall"

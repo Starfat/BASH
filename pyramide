@@ -1,0 +1,12 @@
+#!/bin/bash
+
+#Obligatorisk oppgave 2A – 6100N Innføring i Linux H2019
+
+read tall
+
+echo "$tall"
+
+
+
+
+

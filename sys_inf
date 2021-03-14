@@ -1,0 +1,46 @@
+#!/bin/bash
+
+tittel="Systeminformasjon - $HOSTNAME"
+tidspunkt=$(date +"%x %X %Z")
+timeStamp="Generert $tidspunkt av $USER"
+
+reportUpTime() {
+cat << _EOF_
+  <h2> Oppetid </h2>
+  <pre>$(uptime)</pre>
+_EOF_
+return
+}
+
+reportDiskSpace() {
+cat << _EOF_
+  <h2> Diskbruk </h2>
+  <pre>$(df -h)</pre>
+_EOF_
+return
+}
+
+reportHomeSpace() {
+cat << _EOF_
+  <h2> Home Diskbruk </h2>
+  <pre>$(du -sh /home/*)</pre>
+_EOF_
+return
+}
+
+cat << _EOF_
+<html>
+  <head>
+    <title> $tittel </title>
+  </head>
+  <body>
+    <h1> $tittel </h1>
+    <p> $timeStamp </p>
+    $(reportUpTime)
+    $(reportDiskSpace)
+    $(reportHomeSpace)
+  </body>
+</html>
+_EOF_
+
+

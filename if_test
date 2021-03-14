@@ -1,0 +1,7 @@
+#!/bin/bash
+
+if ls -d ~/InfoSys; then
+	echo "Finner bin-område"
+else
+	echo "Finner ikke bin-område"
+fi
